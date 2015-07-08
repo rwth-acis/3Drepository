@@ -1,7 +1,9 @@
 /// For each model, the path to its X3D file, an image for the gallery and its Sevianno ID needs to be provided
+/// We suggest using "getNewId.php". It is in the same folder as this file. Just open "getNewId.php" in your browser. 
+
 /// The Sevianno ID can be derived via a REST client (Google Chrome for example provides an extension called "Advanced Rest Client"
 /// In Firofox, the RESTClient add-on can be used.
-/// Use the REST client to send a POST request to http://137.226.58.24:8084/annotations/objects with the following JSON payload: {"collection": "Object3D"}
+/// Use the REST client to send a POST request to http://eiche.informatik.rwth-aachen.de:7075/annotations/objects with the following JSON payload: {"collection": "Objects3D"}
 /// The "Content-Type" has to be set to "application/json".
 /// This POST request creates a Sevianno object for the model and returns the objects ID (in a JSON object)
 /// Insert the Sevianno ID as last entry in your model array.
@@ -21,6 +23,12 @@ var annotations;
 var isInfoShown = false;
 /// The Sevianno object id of currently selected model
 var seviannoId;
+
+var ANNOTATIONS_COLLECTION = "TextTypeAnnocations";
+
+var BASE_SERVICE_URL = 'http://eiche.informatik.rwth-aachen.de:7075';
+var ANNOTATION_SERVICE_URL = BASE_SERVICE_URL + 'annotations/annotations';
+var OBJECT_SERVICE_URL = BASE_SERVICE_URL + 'annotations/objects';
 
 // The show/hide info button
 function showInfo() {
@@ -183,14 +191,14 @@ function addAnnotation() {
 function createAnnotation() {
   if (seviannoId !== undefined) {
     var data = new Object();
-    data.collection = "Annotations3DTextType";
+    data.collection = ANNOTATIONS_COLLECTION;
     data.text = textLinksToHtml(document.getElementById('textNewAnnotation').value);
     data.objectId = seviannoId;
     data.timestamp = Date.now();
     data.toolId = "Anatomy";
     var json_payload = JSON.stringify(data);
 
-    sendRequest("POST", 'http://137.226.58.24:8084/annotations/annotations', json_payload, 2, function(answer) {
+    sendRequest("POST", ANNOTATION_SERVICE_URL, json_payload, 2, function(answer) {
       readAnnotations(data.objectId);
       document.getElementById("debug_div").innerHTML = document.getElementById("debug_div").innerHTML + "<br>" + "RETURN " + answer;
     });
@@ -211,7 +219,7 @@ function editAnnotation() {
     var annotationId = annotations[selectedAnnotationIndex].annotation.id;
     var json_payload = JSON.stringify(data);
     
-    sendRequest("PUT", 'http://137.226.58.24:8084/annotations/objects/' + annotationId, json_payload, 2, function(answer) {
+    sendRequest("PUT", OBJECT_SERVICE_URL + annotationId, json_payload, 2, function(answer) {
       readAnnotations(seviannoId);
       document.getElementById("debug_div").innerHTML = document.getElementById("debug_div").innerHTML + "<br>" + "RETURN " + answer;
     });
@@ -224,7 +232,7 @@ function editAnnotation() {
  * @returns {undefined}
  */
 function readAnnotations(objectId) { 
-  sendRequest("GET", 'http://137.226.58.24:8084/annotations/objects/' + objectId + '/annotations', null, 2, function(answer) {
+  sendRequest("GET", OBJECT_SERVICE_URL + objectId + '/annotations', null, 2, function(answer) {
     var answerParsed = JSON.parse(answer);
     var table = document.getElementById("annotationTable");
     annotations = answerParsed.annotations;
@@ -267,7 +275,7 @@ function deleteAnnotation() {
     // The id of the annotation which should be deleted
     var annotationId = annotations[selectedAnnotationIndex].annotation.id;
     
-    sendRequest("DELETE", 'http://137.226.58.24:8084/annotations/objects/' + annotationId, null, 2, function(answer) {
+    sendRequest("DELETE", OBJECT_SERVICE_URL + annotationId, null, 2, function(answer) {
       readAnnotations(seviannoId);
       document.getElementById("debug_div").innerHTML = document.getElementById("debug_div").innerHTML + "<br>" + "RETURN " + answer;
     });

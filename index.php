@@ -4,7 +4,7 @@
   <head>
     <meta http-equiv='Content-Type' content='text/html;charset=utf-8'></meta>
     <link rel='stylesheet' type='text/css' href='http://www.x3dom.org/x3dom/release/x3dom.css'></link>
-    <script type='text/javascript' src='http://www.x3dom.org/x3dom/release/x3dom.js'></script>
+    <script type='text/javascript' src='../js/x3dom.js'></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js" ></script>
     <script type="text/javascript" src="ajax.js" ></script>
      
