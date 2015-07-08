@@ -7,7 +7,7 @@
 	<script>
 		document.getElementById("btn").onclick=newId;
 		function newId() {
-			sendRequest('POST', 'http://eiche.informatik.rwth-aachen.de:7075/annotations//objects', '{"collection": "Objects3D", "toolId": "Anatomy"}', 1, output);
+			sendRequest('POST', 'http://eiche.informatik.rwth-aachen.de:7075/annotations/objects', '{"collection": "Objects3D", "toolId": "Anatomy"}', 1, output);
 		}
 		function output(text) {
 			document.getElementById("output").innerHTML = text;

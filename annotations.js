@@ -7,12 +7,16 @@
 /// The "Content-Type" has to be set to "application/json".
 /// This POST request creates a Sevianno object for the model and returns the objects ID (in a JSON object)
 /// Insert the Sevianno ID as last entry in your model array.
-var models = new Array( new Array("brainstem/Complete/Composite.x3d", "brainstem/Complete/preview.jpg", "12346"),
-                        new Array("claw/2015-claw.x3d", "claw/preview.png", "12347"),
-                        new Array("foot/Reduced_Textured/Reduced_Textured.x3d", "foot/preview.png", "12348"),
-                        new Array("hand/HandMerge_poisson_10_9_reduced_uv_textured.x3d", "hand/preview.png", "12443"),
-                        new Array("skull/Skull_Composite.x3d", "skull/preview.png", "12440")
-                      );
+var models = new Array( new Array("brainstem/Complete/Composite.x3d", "brainstem/preview.jpg", "12890"),
+                        new Array("claw/2015-claw.x3d", "claw/preview.png", "12891"),
+                        new Array("foot/Reduced_Textured/Reduced_Textured.x3d", "foot/preview.png", "12892"),
+                        new Array("hand/HandMerge_poisson_10_9_reduced_uv_textured.x3d", "hand/preview.png", "12893"),
+                        new Array("skull/Skull_Composite.x3d", "skull/preview.png", "12894"),
+                        new Array("heart/heart.x3d", "heart/preview.png", "12895"),
+                        new Array("pelvicbone/pelvicbone.x3d", "pelvicbone/preview.png", "12896"),
+                        new Array("cologne/cologne.x3d", "cologne/preview.png", "12897"),
+                        new Array("machine/machine.x3d", "machine/preview.png", "12898")
+                      );					  
 /// The currently selected row in annotationTable
 var selectedRow;
 /// The index of the currently selected annotation
@@ -26,9 +30,9 @@ var seviannoId;
 
 var ANNOTATIONS_COLLECTION = "TextTypeAnnocations";
 
-var BASE_SERVICE_URL = 'http://eiche.informatik.rwth-aachen.de:7075';
-var ANNOTATION_SERVICE_URL = BASE_SERVICE_URL + 'annotations/annotations';
-var OBJECT_SERVICE_URL = BASE_SERVICE_URL + 'annotations/objects';
+var BASE_SERVICE_URL = 'http://eiche.informatik.rwth-aachen.de:7075/';
+var ANNOTATION_SERVICE_URL = BASE_SERVICE_URL + 'annotations/annotations/';
+var OBJECT_SERVICE_URL = BASE_SERVICE_URL + 'annotations/objects/';
 
 // The show/hide info button
 function showInfo() {

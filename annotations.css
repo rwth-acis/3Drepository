@@ -1,0 +1,55 @@
+textarea {
+  	width: 100%;
+}        
+button {
+    margin: 5px;
+}
+#viewer-div {
+    height: 600px;
+    width: 45%;
+    float: left;
+    padding: 10px;
+}
+#x3dViewer {
+    height: 90%;
+    width: 100%;
+    margin-bottom: 10px;
+}
+#annotations {
+    float:left;
+    padding:10px;
+    height: 600px;
+    width: 45%;
+    overflow-y: auto;
+}
+#gallery-div {
+    width: 99%;
+    float: bottom;
+    padding:5px;
+    overflow-x: auto;
+    clear: both;
+}
+#gallery {
+    
+}
+#gallery img {
+  width:256px;
+  height:256px;
+}
+#gallery td img
+{
+  border:1px solid grey;
+  text-decoration:none;
+}
+#debug_div{
+    display: none;
+}
+img {
+    margin-right: 5px;
+}
+.time_column {
+    width: 150px;
+}
+.hide {
+    display: none;
+}

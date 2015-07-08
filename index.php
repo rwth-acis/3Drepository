@@ -1,12 +1,10 @@
 <!DOCTYPE html>
-<?php $x3dFile=glob("*.x3d")[0] ?>
 <html>
   <head>
     <meta http-equiv='Content-Type' content='text/html;charset=utf-8'></meta>
     <link rel='stylesheet' type='text/css' href='http://www.x3dom.org/x3dom/release/x3dom.css'></link>
-    <script type='text/javascript' src='../js/x3dom.js'></script>
+    <script type='text/javascript' src='http://www.x3dom.org/x3dom/release/x3dom.js'></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js" ></script>
-    <script type="text/javascript" src="ajax.js" ></script>
      
     <style type="text/css">  
         textarea {
@@ -71,8 +69,8 @@ img {
       <!-- X3D ---------------------------------------------------- -->
       <x3d id='x3dViewer' showStat='false' showLog='false' x='0px' y='0px'>
         <scene>
-          <?php echo "<inline id='inlineBox' url='".$x3dFile."'></inline>" ?>
-        </scene>
+          <inline id='inlineBox'></inline>
+		</scene>
       </x3d>
       
       <!-- INFO --------------------------------------------------- -->
@@ -120,9 +118,8 @@ img {
         </tr>
       </table>
     </div>
-    <div id="debug_div">Debug:</div>
+    <div id="debug_div" style="display: none;">Debug:</div>
     
-    <script type="text/javascript" src="x3d-extensions.js" ></script>    
     <script type="text/javascript" src="annotations.js" ></script>    
   </body>
 </html>
