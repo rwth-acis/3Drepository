@@ -28,7 +28,7 @@ var isInfoShown = false;
 /// The Sevianno object id of currently selected model
 var seviannoId;
 
-var ANNOTATIONS_COLLECTION = "TextTypeAnnocations";
+var ANNOTATIONS_COLLECTION = "TextTypeAnnotations";
 
 var BASE_SERVICE_URL = 'http://eiche.informatik.rwth-aachen.de:7075/';
 var ANNOTATION_SERVICE_URL = BASE_SERVICE_URL + 'annotations/annotations/';
