@@ -1,12 +1,15 @@
 /// For each model, the path to its X3D file, an image for the gallery and its Sevianno ID needs to be provided
 /// We suggest using "getNewId.php". It is in the same folder as this file. Just open "getNewId.php" in your browser. 
-
+///
+/// Alternative:
 /// The Sevianno ID can be derived via a REST client (Google Chrome for example provides an extension called "Advanced Rest Client"
 /// In Firofox, the RESTClient add-on can be used.
 /// Use the REST client to send a POST request to http://eiche.informatik.rwth-aachen.de:7075/annotations/objects with the following JSON payload: {"collection": "Objects3D"}
 /// The "Content-Type" has to be set to "application/json".
 /// This POST request creates a Sevianno object for the model and returns the objects ID (in a JSON object)
 /// Insert the Sevianno ID as last entry in your model array.
+///
+/// PLEASE NOTE: Push your changes to "https://github.com/dost25/3Drepository"
 var models = new Array( new Array("brainstem/Complete/Composite.x3d", "brainstem/preview.jpg", "12890"),
                         new Array("claw/2015-claw.x3d", "claw/preview.png", "12891"),
                         new Array("foot/Reduced_Textured/Reduced_Textured.x3d", "foot/preview.png", "12892"),
