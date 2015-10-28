@@ -10,15 +10,16 @@
 /// Insert the Sevianno ID as last entry in your model array.
 ///
 /// PLEASE NOTE: Push your changes to "https://github.com/dost25/3Drepository"
-var models = new Array( new Array("brainstem/Complete/Composite.x3d", "brainstem/preview.jpg", "12890"),
-                        new Array("claw/2015-claw.x3d", "claw/preview.png", "12891"),
+var models = new Array( new Array("brainstem/Complete/Composite.x3d", "brainstem/preview.jpg", "12891"),
+                        new Array("claw/2015-claw.x3d", "claw/preview.png", "12890"),
                         new Array("foot/Reduced_Textured/Reduced_Textured.x3d", "foot/preview.png", "12892"),
                         new Array("hand/HandMerge_poisson_10_9_reduced_uv_textured.x3d", "hand/preview.png", "12893"),
                         new Array("skull/Skull_Composite.x3d", "skull/preview.png", "12894"),
                         new Array("heart/heart.x3d", "heart/preview.png", "12895"),
                         new Array("pelvicbone/pelvicbone.x3d", "pelvicbone/preview.png", "12896"),
                         new Array("cologne/cologne.x3d", "cologne/preview.png", "12897"),
-                        new Array("machine/machine.x3d", "machine/preview.png", "12898")
+                        new Array("machine/machine.x3d", "machine/preview.png", "12898"),
+						new Array("skull2/skull2.x3d", "skull2/preview.png", "13337")
                       );					  
 /// The currently selected row in annotationTable
 var selectedRow;
