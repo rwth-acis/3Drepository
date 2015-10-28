@@ -1,0 +1,5 @@
+# ignore model-folder as the models are too large
+models/*
+
+# ignore test-folder used for feasibility tests and temporarily demonstrations
+test/*
